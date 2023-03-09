@@ -1,0 +1,80 @@
+@charset "UTF-8";
+:root {
+  --base-font-size: ;
+}
+
+/**
+ * デフォルトのフォントサイズを元に、ルートのフォントサイズをレスポンシブで可変
+ */
+@media (max-width: 767px) {
+  html {
+    font-size: calc(100vw * var(--base-font-size) / 375);
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  html {
+    font-size: calc(100vw * var(--base-font-size) / 1366);
+  }
+}
+
+/**
+ * remに変換する関数
+ */
+img {
+  width: 100%;
+  height: auto;
+}
+
+.head {
+  font-size: calc(20 / var(--base-font-size) * 1rem);
+}
+@media (min-width: 768px) {
+  .head {
+    font-size: calc(28 / var(--base-font-size) * 1rem);
+  }
+}
+
+.list {
+  font-size: calc(14 / var(--base-font-size) * 1rem);
+}
+@media (min-width: 768px) {
+  .list {
+    font-size: calc(20 / var(--base-font-size) * 1rem);
+  }
+}
+
+.img {
+  margin-top: calc(30 / var(--base-font-size) * 1rem);
+  width: calc(300 / var(--base-font-size) * 1rem);
+}
+@media (min-width: 768px) {
+  .img {
+    margin-top: calc(50 / var(--base-font-size) * 1rem);
+    width: calc(500 / var(--base-font-size) * 1rem);
+  }
+}
+
+.text01 {
+  font-size: calc(20 / var(--base-font-size) * 1rem);
+  margin-top: calc(20 / var(--base-font-size) * 1rem);
+}
+@media (min-width: 768px) {
+  .text01 {
+    font-size: calc(24 / var(--base-font-size) * 1rem);
+  }
+}
+
+.text02 {
+  font-size: calc(16 / var(--base-font-size) * 1rem);
+  margin-top: calc(20 / var(--base-font-size) * 1rem);
+}
+@media (min-width: 768px) {
+  .text02 {
+    font-size: calc(20 / var(--base-font-size) * 1rem);
+  }
+}
+
+.text03 {
+  margin-top: 20px;
+  font-size: var(--base-font-size);
+}

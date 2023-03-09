@@ -1,0 +1,76 @@
+:root {
+	--base-font-size: ; // JavaScriptでベースのフォントサイズ取って入れる
+}
+
+/**
+ * デフォルトのフォントサイズを元に、ルートのフォントサイズをレスポンシブで可変
+ */
+html {
+	@media (max-width: 767px) {
+		font-size: calc(100vw * var(--base-font-size) / 375); // SPデザインが375pxで作られているとき
+	}
+	@media (min-width: 768px) and (max-width: 1000px) {
+		font-size: calc(100vw * var(--base-font-size) / 1366); // PCデザインが1366pxで作られているとき
+	}
+}
+
+/**
+ * remに変換する関数
+ */
+@function rem($px) {
+	@return calc($px / var(--base-font-size) * 1rem);
+}
+
+
+
+
+
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.head {
+	font-size: rem(20);
+	@media (min-width: 768px) {
+		font-size: rem(28);
+	}
+}
+
+.list {
+	font-size: rem(14);
+	@media (min-width: 768px) {
+		font-size: rem(20);
+	}
+}
+
+.img {
+	margin-top: rem(30);
+	width: rem(300);
+	@media (min-width: 768px) {
+		margin-top: rem(50);
+		width: rem(500);
+	}
+}
+
+.text01 {
+	font-size: rem(20);
+	margin-top: rem(20);
+	@media (min-width: 768px) {
+		font-size: rem(24);
+	}
+}
+
+.text02 {
+	font-size: rem(16);
+	margin-top: rem(20);
+	@media (min-width: 768px) {
+		font-size: rem(20);
+	}
+}
+
+.text03 {
+	margin-top: 20px;
+	font-size: var(--base-font-size);
+}
